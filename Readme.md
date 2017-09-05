@@ -8,18 +8,23 @@
 
 ## Getting started
 
+To clone the project, follow below steps:
+
+``` python
+git clone https://github.com/ankur-dauneria/log-analysis.git
+cd log-analysis
+```
+
 To use the database extract the `newsdata.sql` file from `newsdata.zip` and put it inside the repository folder, and follow below steps:
 
 ```SQL
 psql -d news -f newsdata.sql
 ```
 
-To clone and run the project, follow below steps:
+Now, to run the project, go to the clone directory and follow below step:
 
 ``` python
-    git clone https://github.com/ankur-dauneria/log-analysis.git
-    cd log-analysis
-    python reportingtool.py
+python reportingtool.py
 ```
 
 ## Project structure
