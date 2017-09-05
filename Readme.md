@@ -17,8 +17,8 @@ psql -d news -f newsdata.sql
 To clone and run the project, follow below steps:
 
 ``` python
-    git clone <repository>
-    cd <repository>
+    git clone https://github.com/ankur-dauneria/log-analysis.git
+    cd log-analysis
     python reportingtool.py
 ```
 
