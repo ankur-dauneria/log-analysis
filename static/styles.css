@@ -1,0 +1,10 @@
+    /* body specific changes*/
+    
+    body {
+        font-family: 'Lato', sans-serif;
+    }
+    /* table header specific changes*/
+    
+    th {
+        background-color: #c4e0e5;
+    }

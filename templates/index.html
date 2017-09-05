@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Reporting Tool</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='bootstrap.min.css') }}">
+
+    <!--Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+    <!--Additional stylesheet-->
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <header class="reporting-tool-header">
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{ url_for('main') }}">Reports</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--end Navigation bar-->
+
+    <!--Tables sections-->
+    <section class="reporting-tool-section">
+        <div class="container">
+
+            <h3>Most popular three articles of all time</h3>
+            <br>
+            <!--Table 1-->
+            <table class="table table-responsive table-bordered">
+                <thead>
+                    <tr>
+                        <th>Article</th>
+                        <th>Total Views</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in fetched_1 %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <!--end Table 1-->
+
+            <br>
+            <h3>Most popular article authors of all time</h3>
+            <br>
+            <!--Table 2-->
+            <table class="table table-responsive table-bordered">
+                <thead>
+                    <tr>
+                        <th>Authors</th>
+                        <th>Total Views</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in fetched_2 %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <!--end Table 2-->
+
+            <br>
+            <h3>Days with more than 1% of requests lead to errors</h3>
+            <br>
+            <!--Table 3-->
+            <table class="table table-responsive table-bordered">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Error percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in fetched_3 %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <!--end Table 3-->
+        </div>
+    </section>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+</body>
+
+</html>
