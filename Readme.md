@@ -3,12 +3,10 @@
 > This tool analyzes SQL logs to find useful insights. The project uses Flask framework, wherein a lightweight python web server is constructed to query the large Postgres SQL database (with over millions rows) to fetch the results. Results are then displayed on a bootstrap based frontend. In short, it's a reporting tool that queries the database to discover useful insights. Database used here contains newspaper articles, as well as the web server log for the site.
 
 ## Front end with output
----
 
 [Preview image of frontend with output](img/log-analysis.png "Preview")
 
 ## Getting started
----
 
 To use the database extract the `newsdata.sql` file from `newsdata.zip` and put it inside the repository folder, and follow below steps:
 
@@ -25,7 +23,6 @@ To clone and run the project, follow below steps:
 ```
 
 ## Project structure
----
 
 The project analyzes the SQL logs (newsdata.sql) to determine the answer to below queries.
 
@@ -52,7 +49,6 @@ A python web server based on Flask framework is built to query the postgres SQL 
  `reportingtooldb.py` contains APIs to connects to database, executes different SQLs queries and return the fetched data.
 
 ## SQL Queries
----
 
 - What are the most popular three articles of all time?
 
@@ -73,7 +69,7 @@ create view most_erroneous_day_view as select * from (select A.dat, (A.num * 100
 ```
 
 ## APIs
----
+
 ```python
 def get_most_popular_articles() : Connects to DB, executes the SQL query (view) most_popular_articles_view and returns the results. most_popular_articles_view describes 3 most popular articles of all time.
 ```
@@ -87,7 +83,6 @@ def get_most_erroneous_day() : Connects to DB, executes the SQL query (view) mos
 ```
 
 ## Built with
----
 
 Backend: Python 3
 
@@ -100,16 +95,13 @@ Database: Postgres SQL
 Font: Google Fonts
 
 ## Found Issue/Report Bug
----
 
 Please report it using the issues tab.
 
 ## Credit
----
 
 Udacity for providing newsdata.sql
 
 ## License
----
 
 This project uses [MIT](License.md) license.
