@@ -1,21 +1,19 @@
 Most popular three articles of all time
 
-Article	                           Total Views
-Candidate is jerk, alleges rival	342102
-Bears love berries, alleges bear	256365
-Bad things gone, say good people	171762
-
+Article				      Total Views
+Candidate is jerk, alleges rival	338647
+Bears love berries, alleges bear	253801
+Bad things gone, say good people	170098
 
 Most popular article authors of all time
 
-Authors	                      Total Views
-Ursula La Multa	                512805
-Rudolf von Treppenwitz	        427781
-Anonymous Contributor	        171762
-Markoff Chaney	                85387
-
+Authors			      Total Views
+Ursula La Multa			507594
+Rudolf von Treppenwitz		423457
+Anonymous Contributor		170098
+Markoff Chaney			84557
 
 Days with more than 1% of requests lead to errors
 
-Date	                Error percentage
-2016-07-17	             2
+Date		Error percentage
+2016-07-17	 2

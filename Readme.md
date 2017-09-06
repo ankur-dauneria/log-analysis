@@ -62,13 +62,13 @@ SQL queries addresses below questions:
 - What are the most popular three articles of all time?
 
 ``` SQL
-create view most_popular_articles_view as select articles.title, count(log.ip) as num from articles left join log on log.path like concat('%', articles.slug, '%') group by articles.title order by num desc limit 3;
+create view most_popular_articles_view as select articles.title, count(log.ip) as num from articles join log on log.path = concat('/article/', articles.slug) group by articles.title order by num desc limit 3;
 ```
 
 - Who are the most popular article authors of all time?
 
 ```SQL
-create view most_popular_authors_view as select A.name, sum(B.num) as sumB from (select authors.id, authors.name, count(articles.title) as num from authors left join articles on authors.id = articles.author group by authors.id, authors.name order by num) as A left join (select articles.author, articles.title, count(log.ip) as num from articles left join log on log.path like concat('%', articles.slug, '%') group by articles.author, articles.title order by num desc) as B on A.id = B.author group by A.name order by sumB desc;
+create view most_popular_authors_view as select A.name, sum(B.num) as sumB from (select authors.id, authors.name, count(articles.title) as num from authors left join articles on authors.id = articles.author group by authors.id, authors.name order by num) as A left join (select articles.author, articles.title, count(log.ip) as num from articles left join log on log.path = concat('/article/', articles.slug) group by articles.author, articles.title order by num desc) as B on A.id = B.author group by A.name order by sumB desc;
 ```
 
 - On which days did more than 1% of requests lead to errors?
