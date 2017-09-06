@@ -80,7 +80,7 @@ create view most_erroneous_day_view as select * from (select A.dat, (A.num * 100
 ## APIs
 
 ```python
-def dbconnect(database_name): Connects to database and returns the db connection handle and cursor
+def dbconnect(database_name) : Connects to database and returns the db connection handle and cursor
 ```
 
 ```python
