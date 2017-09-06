@@ -18,8 +18,8 @@ def get_most_popular_articles():
     c = db.cursor()
     c.execute("select * from most_popular_articles_view")
     results = c.fetchall()
-    return results
     db.close()
+    return results
 
 
 def get_most_popular_authors():
@@ -34,8 +34,8 @@ def get_most_popular_authors():
     c = db.cursor()
     c.execute("select * from most_popular_authors_view")
     results = c.fetchall()
-    return results
     db.close()
+    return results
 
 
 def get_most_erroneous_day():
@@ -50,5 +50,5 @@ def get_most_erroneous_day():
     c = db.cursor()
     c.execute("select * from most_erroneous_day_view")
     results = c.fetchall()
-    return results
     db.close()
+    return results
