@@ -2,6 +2,8 @@
 
 > This tool analyzes SQL logs to find useful insights. The project uses Flask framework, wherein a lightweight python web server is constructed to query the large Postgres SQL database (with over millions rows) to fetch the results. Results are then displayed on a bootstrap based frontend. Database used here contains newspaper articles, as well as the web server log for the site.
 
+> In short, it's small version of a reporting tool that will use information from the database to discover insights.
+
 ## Front end with output
 
 [Preview image of frontend with output](img/log-analysis.png "Preview")
