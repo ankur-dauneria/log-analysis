@@ -29,7 +29,9 @@ python reportingtool.py
 
 ## Project structure
 
-The project analyzes the SQL logs (newsdata.sql) to determine the answer to below queries.
+A python web server based on Flask framework is built to query the postgres SQL database (with millions of rows). The fetched result is then displayed on the web frontend.
+
+SQL queries addresses below questions:
 
  - What are the most popular three articles of all time?
 
@@ -37,21 +39,19 @@ The project analyzes the SQL logs (newsdata.sql) to determine the answer to belo
 
  - On which days did more than 1% of requests lead to errors?
 
-A python web server based on Flask framework is built to query the postgres SQL database (with millions of rows), and display the results on the frontend.
-
 #### Folders
 
- - `img`  contains prview image (front-end) of Log analysis reporting tool output
+ - `img`:  contains prview image (front-end) of Log analysis reporting tool output
 
- - `templates`  contains HTML templates used by Flask framework
+ - `templates`:  contains HTML templates used by Flask framework
 
- - `static`  contains JS and CSS files used by Flask framework
+ - `static`:  contains JS and CSS files used by Flask framework
 
- - `files`  contains sample textual output of the program
+ - `files`:  contains sample textual output of the program
 
- `reportingtool.py` contains the web server code. It runs and uses the APIs to fetch the results of the queries.
+ `reportingtool.py`: contains the web server code. It runs and uses the APIs to fetch the results of the queries. This file is to be executed to see the results.
 
- `reportingtooldb.py` contains APIs to connects to database, executes different SQLs queries and return the fetched data.
+ `reportingtooldb.py`: contains APIs to connects to database, executes different SQLs queries and return the fetched data.
 
 ## SQL Queries
 
