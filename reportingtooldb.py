@@ -1,9 +1,19 @@
 # Import the Postgres SQL component
 import psycopg2
 
-DBNAME = "news"           # database name
-DBUSER = "vagrant"        # database user name
-DBPASSWORD = "vagrant"    # database user password
+
+def dbconnect(database_name="news"):
+    """Connects to database and returns the db connection handle and cursor
+
+    Attributes: database name (news as default value)
+    Returns: DB connection handle, cursor
+    """
+    try:
+        db = psycopg2.connect("dbname={}".format(database_name))
+        cursor = db.cursor()
+        return db, cursor
+    except:
+        print("Error: Database connect failed!")
 
 
 def get_most_popular_articles():
@@ -14,10 +24,10 @@ def get_most_popular_articles():
        Attributes: None
        Returns: Set of rows
     """
-    db = psycopg2.connect(database=DBNAME, user=DBUSER, password=DBPASSWORD)
-    c = db.cursor()
-    c.execute("select * from most_popular_articles_view")
-    results = c.fetchall()
+    db, cursor = dbconnect()
+    query = "select * from most_popular_articles_view"
+    cursor.execute(query)
+    results = cursor.fetchall()
     db.close()
     return results
 
@@ -30,10 +40,10 @@ def get_most_popular_authors():
        Attributes: None
        Returns: Set of rows
     """
-    db = psycopg2.connect(database=DBNAME, user=DBUSER, password=DBPASSWORD)
-    c = db.cursor()
-    c.execute("select * from most_popular_authors_view")
-    results = c.fetchall()
+    db, cursor = dbconnect()
+    query = "select * from most_popular_authors_view"
+    cursor.execute(query)
+    results = cursor.fetchall()
     db.close()
     return results
 
@@ -46,9 +56,9 @@ def get_most_erroneous_day():
        Attributes: None
        Returns: Set of rows
     """
-    db = psycopg2.connect(database=DBNAME, user=DBUSER, password=DBPASSWORD)
-    c = db.cursor()
-    c.execute("select * from most_erroneous_day_view")
-    results = c.fetchall()
+    db, cursor = dbconnect()
+    query = "select * from most_erroneous_day_view"
+    cursor.execute(query)
+    results = cursor.fetchall()
     db.close()
     return results
