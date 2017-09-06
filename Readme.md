@@ -29,6 +29,8 @@ Now, to run the project, go to the clone directory and follow below step:
 python reportingtool.py
 ```
 
+Open localhost:8000 in a webbrowser
+
 ## Project structure
 
 A python web server based on Flask framework is built to query the postgres SQL database (with millions of rows). The fetched result is then displayed on the web frontend.
